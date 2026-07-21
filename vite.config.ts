@@ -7,6 +7,11 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Override the wrapper's built-in nitro plugin (defaults to cloudflare) to target Vercel.
+  // Do NOT add nitro() manually via vite.plugins — that duplicates the wrapper's instance.
+  nitro: {
+    preset: "vercel",
+  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
