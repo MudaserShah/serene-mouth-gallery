@@ -1,16 +1,12 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Reveal, Counter } from "@/components/motion";
-import logoAsset from "@/assets/logo.asset.json";
-import dentistAsset from "@/assets/dentist-portrait.asset.json";
-import clinicChairAsset from "@/assets/clinic-chair.asset.json";
-import surgery1 from "@/assets/surgery-1.asset.json";
-import surgery2 from "@/assets/surgery-2.asset.json";
-import surgery3 from "@/assets/surgery-3.asset.json";
-import surgery4 from "@/assets/surgery-4.asset.json";
-import consultationAsset from "@/assets/consultation.asset.json";
-import patientAsset from "@/assets/patient-treatment.asset.json";
-import bannersAsset from "@/assets/clinic-banners.asset.json";
+import logoAsset from "@/assets/logo.png";
+import dentistAsset from "@/assets/dentist-portrait.png";
+import clinicChairAsset from "@/assets/clinic-chair.png";
+import surgery1 from "@/assets/surgery-1.png";
+import consultationAsset from "@/assets/consultation.png";
+import bannersAsset from "@/assets/clinic-banners.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,9 +20,9 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Center of Dental Implant & Face Surgery — Dr. Sayed Mustafa" },
       { property: "og:description", content: "FCPS Oral & Maxillofacial Surgeon. Implants, orthodontics, facial trauma & cosmetic surgery in Wah Cantt." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: dentistAsset.url },
+      { property: "og:image", content: dentistAsset },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: dentistAsset.url },
+      { name: "twitter:image", content: dentistAsset },
     ],
   }),
   component: Home,
@@ -76,6 +72,21 @@ const testimonials = [
     r: "Took my son for a mucocele — the doctor treated him gently and professionally, and even called after surgery to check in. Highly recommended.",
   },
 ];
+
+const galleryCategories = [
+  {
+    title: "Implantologist",
+    desc: "Dental implant cases, consultations and restorative work by a certified implantologist.",
+    cover: consultationAsset,
+    to: "/gallery/implantologist",
+  },
+  {
+    title: "Impactions",
+    desc: "Wisdom tooth impactions and maxillofacial surgical procedures in the operating theatre.",
+    cover: surgery1,
+    to: "/gallery/impactions",
+  },
+] as const;
 
 const faqs = [
   {
@@ -131,7 +142,7 @@ function Home() {
           >
             <a href="#top" className="flex items-center gap-3 min-w-0">
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary">
-                <img src={logoAsset.url} alt="Clinic logo" className="h-8 w-8 object-contain" />
+                <img src={logoAsset} alt="Clinic logo" className="h-8 w-8 object-contain" />
               </span>
               <span className="hidden sm:flex flex-col leading-tight min-w-0">
                 <span className="text-display text-[15px] truncate">Center of Dental Implant</span>
@@ -251,7 +262,7 @@ function Home() {
               <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
                 <div className="absolute inset-0 rounded-[36px] bg-gradient-to-br from-primary to-[color:var(--ink)] shadow-luxe" />
                 <img
-                  src={dentistAsset.url}
+                  src={dentistAsset}
                   alt="Dr. Sayed Mustafa at Center of Dental Implant & Face Surgery"
                   className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] rounded-[28px] object-cover"
                 />
@@ -297,10 +308,10 @@ function Home() {
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <Reveal className="relative">
               <div className="grid grid-cols-2 gap-4">
-                <img src={clinicChairAsset.url} alt="Modern dental operatory" className="rounded-3xl object-cover aspect-[3/4] shadow-luxe" />
+                <img src={clinicChairAsset} alt="Modern dental operatory" className="rounded-3xl object-cover aspect-[3/4] shadow-luxe" />
                 <div className="mt-12 space-y-4">
-                  <img src={consultationAsset.url} alt="Patient consultation" className="rounded-3xl object-cover aspect-square shadow-luxe" />
-                  <img src={bannersAsset.url} alt="Clinic entrance" className="rounded-3xl object-cover aspect-[4/5] shadow-luxe" />
+                  <img src={consultationAsset} alt="Patient consultation" className="rounded-3xl object-cover aspect-square shadow-luxe" />
+                  <img src={bannersAsset} alt="Clinic entrance" className="rounded-3xl object-cover aspect-[4/5] shadow-luxe" />
                 </div>
               </div>
             </Reveal>
@@ -347,7 +358,7 @@ function Home() {
               <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
                 <div className="absolute inset-0 rounded-[36px] border border-[color:var(--gold)]/40" />
                 <img
-                  src={dentistAsset.url}
+                  src={dentistAsset}
                   alt="Dr. Sayed Mustafa portrait"
                   className="absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] rounded-[28px] object-cover"
                 />
@@ -460,25 +471,33 @@ function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[220px]">
-            {[
-              { src: surgery1.url, alt: "Maxillofacial surgery in progress", span: "col-span-2 row-span-2" },
-              { src: clinicChairAsset.url, alt: "Modern dental chair", span: "row-span-1" },
-              { src: surgery2.url, alt: "Surgical team", span: "row-span-2" },
-              { src: patientAsset.url, alt: "Patient recovery", span: "row-span-1" },
-              { src: surgery3.url, alt: "Focused surgical work", span: "row-span-1" },
-              { src: bannersAsset.url, alt: "Clinic entrance banners", span: "row-span-1" },
-              { src: surgery4.url, alt: "Operating theatre", span: "col-span-2 row-span-1" },
-            ].map((g, i) => (
-              <Reveal key={i} delay={i * 40} className={g.span}>
-                <div className="group relative h-full w-full overflow-hidden rounded-3xl shadow-luxe">
-                  <img
-                    src={g.src}
-                    alt={g.alt}
-                    className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ink)]/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+            {galleryCategories.map((c, i) => (
+              <Reveal key={c.title} delay={i * 120}>
+                <Link
+                  to={c.to}
+                  className="group block relative h-full overflow-hidden rounded-3xl shadow-luxe transition duration-500 hover:-translate-y-1"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={c.cover}
+                      alt={c.title}
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ink)]/85 via-[color:var(--ink)]/20 to-transparent" />
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-7 text-primary-foreground">
+                    <div className="h-px w-10 bg-[color:var(--gold)] transition-all duration-500 group-hover:w-24" />
+                    <h3 className="mt-4 text-display text-3xl md:text-4xl">{c.title}</h3>
+                    <p className="mt-2 text-sm text-primary-foreground/80 max-w-md">{c.desc}</p>
+                    <span className="mt-4 inline-flex items-center gap-2 text-sm text-[color:var(--gold-soft)]">
+                      View gallery
+                      <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--gold)] text-[color:var(--ink)] transition-transform group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </span>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -789,7 +808,7 @@ function Home() {
             <div>
               <div className="flex items-center gap-3">
                 <span className="grid h-11 w-11 place-items-center rounded-full bg-primary-foreground">
-                  <img src={logoAsset.url} alt="Logo" className="h-8 w-8 object-contain" />
+                  <img src={logoAsset} alt="Logo" className="h-8 w-8 object-contain" />
                 </span>
                 <div className="leading-tight">
                   <div className="text-display">Center of Dental Implant</div>
