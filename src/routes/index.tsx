@@ -141,9 +141,7 @@ function Home() {
             }`}
           >
             <a href="#top" className="flex items-center gap-3 min-w-0">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary">
-                <img src={logoAsset} alt="Clinic logo" className="h-8 w-8 object-contain" />
-              </span>
+              <img src={logoAsset} alt="Clinic logo" className="h-12 w-12 shrink-0 rounded-full object-cover" />
               <span className="hidden sm:flex flex-col leading-tight min-w-0">
                 <span className="text-display text-[15px] truncate">Center of Dental Implant</span>
                 <span className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
@@ -807,9 +805,7 @@ function Home() {
           <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
             <div>
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-full bg-primary-foreground">
-                  <img src={logoAsset} alt="Logo" className="h-8 w-8 object-contain" />
-                </span>
+                <img src={logoAsset} alt="Logo" className="h-12 w-12 rounded-full object-cover" />
                 <div className="leading-tight">
                   <div className="text-display">Center of Dental Implant</div>
                   <div className="text-[11px] uppercase tracking-[0.25em] text-[color:var(--gold-soft)]">
