@@ -37,9 +37,7 @@ function ImplantologistGallery() {
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex items-center justify-between gap-4 rounded-full glass shadow-luxe px-4 py-2.5">
             <Link to="/" className="flex items-center gap-3 min-w-0">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary">
-                <img src={logoAsset} alt="Clinic logo" className="h-8 w-8 object-contain" />
-              </span>
+              <img src={logoAsset} alt="Clinic logo" className="h-11 w-11 shrink-0 rounded-full object-cover" />
               <span className="hidden sm:flex flex-col leading-tight min-w-0">
                 <span className="text-display text-[15px] truncate">Center of Dental Implant</span>
                 <span className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
