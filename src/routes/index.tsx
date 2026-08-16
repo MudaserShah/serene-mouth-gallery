@@ -262,7 +262,7 @@ function Home() {
                 <img
                   src={dentistAsset}
                   alt="Dr. Sayed Mustafa at Center of Dental Implant & Face Surgery"
-                  className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] rounded-[28px] object-cover"
+                  className="absolute inset-3 h-[calc(100%-1.5rem)] w-[calc(100%-1.5rem)] rounded-[28px] object-cover object-top"
                 />
                 {/* floating cards */}
                 <div className="absolute -left-6 top-10 glass rounded-2xl px-4 py-3 shadow-luxe animate-float-slow">
@@ -358,7 +358,7 @@ function Home() {
                 <img
                   src={dentistAsset}
                   alt="Dr. Sayed Mustafa portrait"
-                  className="absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] rounded-[28px] object-cover"
+                  className="absolute inset-4 h-[calc(100%-2rem)] w-[calc(100%-2rem)] rounded-[28px] object-cover object-top"
                 />
                 <div className="absolute -bottom-5 -left-5 glass rounded-2xl px-5 py-4 text-foreground">
                   <div className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">Consultation</div>
@@ -386,7 +386,7 @@ function Home() {
                 <p className="mt-6 text-lg text-primary-foreground/80 max-w-xl">
                   An FCPS-certified Oral &amp; Maxillofacial Surgeon with 8 years of specialist
                   experience. Trained at Khyber Medical University and the College of Physicians
-                  and Surgeons Pakistan. Consultant at Al-Elaj Hospital, Wah Cantt.
+                  and Surgeons Pakistan. Consultant at Center of Dental Implant &amp; Face Surgery, Wah Cantt.
                 </p>
               </Reveal>
               <Reveal delay={280}>
