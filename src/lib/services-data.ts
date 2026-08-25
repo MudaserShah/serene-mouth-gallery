@@ -33,7 +33,8 @@ import rootCanal3 from "@/assets/services/root-canal-3.jpeg";
 import rootCanalIllustration from "@/assets/services/root-canal-illustration.jpeg";
 
 import softTissueRepair1 from "@/assets/services/soft-tissue-repair-1.jpeg";
-import scalingPolishingIcon from "@/assets/services/scaling-polishing.svg";
+import scalingPolishing1 from "@/assets/services/scaling-polishing-1.jpeg";
+import scalingPolishing2 from "@/assets/services/scaling-polishing-2.jpeg";
 import basalCellCarcinoma1 from "@/assets/services/basal-cell-carcinoma-1.jpeg";
 import basalCellCarcinoma2 from "@/assets/services/basal-cell-carcinoma-2.jpeg";
 import basalCellCarcinoma3 from "@/assets/services/basal-cell-carcinoma-3.jpeg";
@@ -224,8 +225,11 @@ export const services: ServiceItem[] = [
     slug: "scaling-and-polishing",
     title: "Scaling and Polishing",
     desc: "Professional cleaning to remove plaque, tartar & stains.",
-    cover: scalingPolishingIcon,
-    gallery: [{ src: scalingPolishingIcon, alt: "Scaling and polishing" }],
+    cover: scalingPolishing1,
+    gallery: [
+      { src: scalingPolishing1, alt: "Scaling and polishing, before and after" },
+      { src: scalingPolishing2, alt: "Scaling and polishing, before and after close view" },
+    ],
   },
   {
     slug: "basal-cell-carcinoma",
