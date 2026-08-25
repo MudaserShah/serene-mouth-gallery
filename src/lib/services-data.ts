@@ -1,22 +1,38 @@
 // Service cover images — cropped from the client's "OUR SERVICES" flyer.
 // Client will send proper individual photos per service later; when that
 // happens, just swap the relevant `cover` (and add to `gallery`) below.
-import dentalImplants from "@/assets/services/dental-implants.png";
 import wisdomToothSurgery from "@/assets/services/wisdom-tooth-surgery.png";
-import jawFaceFractureRepair from "@/assets/services/jaw-face-fracture-repair.png";
 import jawCystsTumors from "@/assets/services/jaw-cysts-tumors.png";
 import correctivesJawSurgery from "@/assets/services/correctives-jaw-surgery.png";
-import faceInfection from "@/assets/services/face-infection.png";
 import viralBacterialFacialInfection from "@/assets/services/viral-bacterial-facial-infection.png";
 import braces from "@/assets/services/braces.png";
 import completeDenture from "@/assets/services/complete-denture.png";
 import aligners from "@/assets/services/aligners.png";
-import gumsDisease from "@/assets/services/gums-disease.png";
-import teethWhitening from "@/assets/services/teeth-whitening.png";
 import laserTeethWhitening from "@/assets/services/laser-teeth-whitening.png";
-import rootCanalTreatment from "@/assets/services/root-canal-treatment.png";
 import childDentistry from "@/assets/services/child-dentistry.png";
 import crownBridge from "@/assets/services/crown-bridge.png";
+
+// Real client case photos
+import dentalImplantMain from "@/assets/services/dental-implant-main.jpeg";
+import dentalImplant1 from "@/assets/services/dental-implant-1.jpeg";
+import dentalImplant2 from "@/assets/services/dental-implant-2.jpeg";
+import dentalImplant3 from "@/assets/services/dental-implant-3.jpeg";
+import dentalImplant4 from "@/assets/services/dental-implant-4.jpeg";
+import dentalImplant5 from "@/assets/services/dental-implant-5.jpeg";
+
+import faceInfectionMain from "@/assets/services/face-infection-main.jpeg";
+import faceInfection1 from "@/assets/services/face-infection-1.jpeg";
+
+import veneersMain from "@/assets/services/veneers-main.jpeg";
+import veneers1 from "@/assets/services/veneers-1.jpeg";
+import veneers2 from "@/assets/services/veneers-2.jpeg";
+
+import rootCanalMain from "@/assets/services/root-canal-main.jpeg";
+import rootCanal1 from "@/assets/services/root-canal-1.jpeg";
+import rootCanal3 from "@/assets/services/root-canal-3.jpeg";
+
+import gumsDisease1 from "@/assets/services/gums-disease-1.jpeg";
+import jawFaceFracture1 from "@/assets/services/jaw-face-fracture-1.jpeg";
 
 // Real clinic photos for the homepage "Clinic Gallery" section.
 import clinicStorageTv from "@/assets/gallery/clinic-storage-tv.jpeg";
@@ -27,6 +43,8 @@ import clinicOffice1 from "@/assets/gallery/clinic-office-1.jpeg";
 import clinicOffice2 from "@/assets/gallery/clinic-office-2.jpeg";
 import clinicBuildingDay from "@/assets/gallery/clinic-building-day.jpeg";
 import clinicBuildingDusk from "@/assets/gallery/clinic-building-dusk.jpeg";
+import clinicChair from "@/assets/gallery/clinic-chair.png";
+import clinicBanners from "@/assets/gallery/clinic-banners.png";
 
 export type GalleryImage = { src: string; alt: string };
 
@@ -51,8 +69,15 @@ export const services: ServiceItem[] = [
     slug: "dental-implants",
     title: "Dental Implant Surgery",
     desc: "Titanium implant surgery with life-like restorations.",
-    cover: dentalImplants,
-    gallery: [{ src: dentalImplants, alt: "Dental implant surgery" }],
+    cover: dentalImplantMain,
+    gallery: [
+      { src: dentalImplantMain, alt: "Dental implant surgery" },
+      { src: dentalImplant1, alt: "Dental implant X-ray" },
+      { src: dentalImplant2, alt: "Dental implant X-ray, close view" },
+      { src: dentalImplant3, alt: "Dental implant X-ray, close view" },
+      { src: dentalImplant4, alt: "Dental implant X-ray, close view" },
+      { src: dentalImplant5, alt: "Dental implant X-ray, full arch" },
+    ],
   },
   {
     slug: "wisdom-tooth-surgery",
@@ -65,8 +90,8 @@ export const services: ServiceItem[] = [
     slug: "jaw-face-fracture-repair",
     title: "Jaw & Face Fracture Repair",
     desc: "Fixation and reconstruction of facial fractures.",
-    cover: jawFaceFractureRepair,
-    gallery: [{ src: jawFaceFractureRepair, alt: "Jaw & face fracture repair" }],
+    cover: jawFaceFracture1,
+    gallery: [{ src: jawFaceFracture1, alt: "Jaw & face fracture repair, post-surgery" }],
   },
   {
     slug: "jaw-cysts-tumors",
@@ -86,8 +111,11 @@ export const services: ServiceItem[] = [
     slug: "face-infection",
     title: "Face Infection",
     desc: "Diagnosis and treatment of facial infections.",
-    cover: faceInfection,
-    gallery: [{ src: faceInfection, alt: "Face infection treatment" }],
+    cover: faceInfectionMain,
+    gallery: [
+      { src: faceInfectionMain, alt: "Face infection treatment" },
+      { src: faceInfection1, alt: "Face infection, before treatment" },
+    ],
   },
   {
     slug: "viral-bacterial-facial-infection",
@@ -121,15 +149,19 @@ export const services: ServiceItem[] = [
     slug: "gums-disease",
     title: "Gums Disease",
     desc: "Diagnosis and treatment of gum (periodontal) disease.",
-    cover: gumsDisease,
-    gallery: [{ src: gumsDisease, alt: "Gums disease treatment" }],
+    cover: gumsDisease1,
+    gallery: [{ src: gumsDisease1, alt: "Gums disease treatment, before and after" }],
   },
   {
-    slug: "teeth-whitening",
-    title: "Teeth Whitening",
-    desc: "Professional whitening for a brighter smile.",
-    cover: teethWhitening,
-    gallery: [{ src: teethWhitening, alt: "Teeth whitening" }],
+    slug: "veneers",
+    title: "Veneers",
+    desc: "Custom veneers for a flawless, natural-looking smile.",
+    cover: veneersMain,
+    gallery: [
+      { src: veneersMain, alt: "Veneers procedure" },
+      { src: veneers1, alt: "Veneers procedure, curing light" },
+      { src: veneers2, alt: "Veneers, before and after" },
+    ],
   },
   {
     slug: "laser-teeth-whitening",
@@ -142,8 +174,12 @@ export const services: ServiceItem[] = [
     slug: "root-canal-treatment",
     title: "Root Canal Treatment",
     desc: "Precision RCT with tooth-coloured fillings.",
-    cover: rootCanalTreatment,
-    gallery: [{ src: rootCanalTreatment, alt: "Root canal treatment" }],
+    cover: rootCanalMain,
+    gallery: [
+      { src: rootCanalMain, alt: "Root canal treatment X-ray" },
+      { src: rootCanal1, alt: "Root canal treatment X-ray, close view" },
+      { src: rootCanal3, alt: "Root canal treatment X-ray, close view" },
+    ],
   },
   {
     slug: "child-dentistry",
@@ -177,4 +213,6 @@ export const clinicGallery: GalleryImage[] = [
   { src: clinicOffice2, alt: "Doctor's office, second view" },
   { src: clinicBuildingDay, alt: "Clinic building — day view" },
   { src: clinicBuildingDusk, alt: "Clinic building — evening view" },
+  { src: clinicChair, alt: "Modern dental operatory" },
+  { src: clinicBanners, alt: "Clinic entrance & service banners" },
 ];

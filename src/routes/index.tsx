@@ -3,9 +3,8 @@ import { useEffect, useState } from "react";
 import { Reveal, Counter } from "@/components/motion";
 import logoAsset from "@/assets/gallery/logo.png";
 import dentistAsset from "@/assets/gallery/dentist-portrait.png";
-import clinicChairAsset from "@/assets/gallery/clinic-chair.png";
 import consultationAsset from "@/assets/gallery/clinic-office-1.jpeg";
-import bannersAsset from "@/assets/gallery/clinic-banners.png";
+import treatmentRoomAsset from "@/assets/gallery/clinic-treatment-room-1.jpeg";
 import { services, clinicGallery } from "@/lib/services-data";
 
 export const Route = createFileRoute("/")({
@@ -279,10 +278,9 @@ function Home() {
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <Reveal className="relative">
               <div className="grid grid-cols-2 gap-4">
-                <img src={clinicChairAsset} alt="Modern dental operatory" className="rounded-3xl object-cover aspect-[3/4] shadow-luxe" />
+                <img src={treatmentRoomAsset} alt="Dental treatment room" className="rounded-3xl object-cover aspect-[3/4] shadow-luxe" />
                 <div className="mt-12 space-y-4">
                   <img src={consultationAsset} alt="Patient consultation" className="rounded-3xl object-cover aspect-square shadow-luxe" />
-                  <img src={bannersAsset} alt="Clinic entrance" className="rounded-3xl object-cover aspect-[4/5] shadow-luxe" />
                 </div>
               </div>
             </Reveal>
