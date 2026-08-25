@@ -368,7 +368,7 @@ function Home() {
                     ["Certified Implantologist", "C-Implant"],
                     ["Certified Orthodontist", "C-Ortho"],
                     ["Patient Satisfaction", "100%"],
-                    ["Average Wait Time", "0 mins"],
+                    ["Average Wait Time", "10 mins"],
                   ].map(([t, v]) => (
                     <div key={t} className="border-t border-[color:var(--gold)]/25 pt-4">
                       <dt className="text-xs uppercase tracking-[0.2em] text-[color:var(--gold-soft)]">{t}</dt>
