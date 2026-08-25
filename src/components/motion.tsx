@@ -53,6 +53,14 @@ export function Counter({
   const ref = useRef<HTMLSpanElement | null>(null);
   const [value, setValue] = useState(0);
 
+  // Preserve decimal precision for values like 4.9 instead of always
+  // rounding to a whole number (which turned 4.9 into 5).
+  const decimals = (() => {
+    const s = end.toString();
+    const i = s.indexOf(".");
+    return i === -1 ? 0 : s.length - i - 1;
+  })();
+
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -63,7 +71,9 @@ export function Counter({
           const tick = (now: number) => {
             const p = Math.min(1, (now - start) / duration);
             const eased = 1 - Math.pow(1 - p, 3);
-            setValue(Math.round(end * eased));
+            const raw = end * eased;
+            const factor = 10 ** decimals;
+            setValue(Math.round(raw * factor) / factor);
             if (p < 1) requestAnimationFrame(tick);
           };
           requestAnimationFrame(tick);
@@ -74,11 +84,14 @@ export function Counter({
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [end, duration]);
+  }, [end, duration, decimals]);
 
   return (
     <span ref={ref}>
-      {value.toLocaleString()}
+      {value.toLocaleString(undefined, {
+        minimumFractionDigits: decimals,
+        maximumFractionDigits: decimals,
+      })}
       {suffix}
     </span>
   );

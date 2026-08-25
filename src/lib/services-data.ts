@@ -34,8 +34,10 @@ import rootCanal3 from "@/assets/services/root-canal-3.jpeg";
 import gumsDisease1 from "@/assets/services/gums-disease-1.jpeg";
 import gumsDisease2 from "@/assets/services/gums-disease-2.jpeg";
 import jawFaceFracture1 from "@/assets/services/jaw-face-fracture-1.jpeg";
-import jawFaceFracture2 from "@/assets/services/jaw-face-fracture-2.jpeg";
-import wisdomToothSurgery2 from "@/assets/services/wisdom-tooth-surgery-2.jpeg";
+// NOTE: "jaw-face-fracture-2.jpeg" and "wisdom-tooth-surgery-2.jpeg" were
+// referenced here but the image files were never added to
+// src/assets/services/. Add the real photos and restore these imports +
+// their gallery entries below once available.
 
 // Real clinic photos for the homepage "Clinic Gallery" section.
 import clinicStorageTv from "@/assets/gallery/clinic-storage-tv.jpeg";
@@ -87,7 +89,6 @@ export const services: ServiceItem[] = [
     cover: wisdomToothSurgery,
     gallery: [
       { src: wisdomToothSurgery, alt: "Wisdom tooth surgery" },
-      { src: wisdomToothSurgery2, alt: "Impacted wisdom tooth illustration" },
     ],
   },
   {
@@ -97,7 +98,6 @@ export const services: ServiceItem[] = [
     cover: jawFaceFracture1,
     gallery: [
       { src: jawFaceFracture1, alt: "Jaw & face fracture repair, post-surgery" },
-      { src: jawFaceFracture2, alt: "Jaw & face fracture repair, titanium plate fixation" },
     ],
   },
   {
