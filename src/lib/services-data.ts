@@ -30,6 +30,13 @@ import veneers2 from "@/assets/services/veneers-2.jpeg";
 import rootCanalMain from "@/assets/services/root-canal-main.jpeg";
 import rootCanal1 from "@/assets/services/root-canal-1.jpeg";
 import rootCanal3 from "@/assets/services/root-canal-3.jpeg";
+import rootCanalIllustration from "@/assets/services/root-canal-illustration.jpeg";
+
+import softTissueRepair1 from "@/assets/services/soft-tissue-repair-1.jpeg";
+import scalingPolishingIcon from "@/assets/services/scaling-polishing.svg";
+import basalCellCarcinoma1 from "@/assets/services/basal-cell-carcinoma-1.jpeg";
+import basalCellCarcinoma2 from "@/assets/services/basal-cell-carcinoma-2.jpeg";
+import basalCellCarcinoma3 from "@/assets/services/basal-cell-carcinoma-3.jpeg";
 
 import gumsDisease1 from "@/assets/services/gums-disease-1.jpeg";
 import gumsDisease2 from "@/assets/services/gums-disease-2.jpeg";
@@ -184,8 +191,9 @@ export const services: ServiceItem[] = [
     slug: "root-canal-treatment",
     title: "Root Canal Treatment",
     desc: "Precision RCT with tooth-coloured fillings.",
-    cover: rootCanalMain,
+    cover: rootCanalIllustration,
     gallery: [
+      { src: rootCanalIllustration, alt: "Root canal treatment illustration" },
       { src: rootCanalMain, alt: "Root canal treatment X-ray" },
       { src: rootCanal1, alt: "Root canal treatment X-ray, close view" },
       { src: rootCanal3, alt: "Root canal treatment X-ray, close view" },
@@ -204,6 +212,31 @@ export const services: ServiceItem[] = [
     desc: "Custom crowns and bridges to restore damaged teeth.",
     cover: crownBridge,
     gallery: [{ src: crownBridge, alt: "Crown & bridge" }],
+  },
+  {
+    slug: "soft-tissue-repair",
+    title: "Soft Tissue Repair",
+    desc: "Surgical repair and reconstruction of oral & facial soft tissue.",
+    cover: softTissueRepair1,
+    gallery: [{ src: softTissueRepair1, alt: "Soft tissue repair, surgery and healing stages" }],
+  },
+  {
+    slug: "scaling-and-polishing",
+    title: "Scaling and Polishing",
+    desc: "Professional cleaning to remove plaque, tartar & stains.",
+    cover: scalingPolishingIcon,
+    gallery: [{ src: scalingPolishingIcon, alt: "Scaling and polishing" }],
+  },
+  {
+    slug: "basal-cell-carcinoma",
+    title: "Basal Cell Carcinoma",
+    desc: "Diagnosis and surgical excision of facial basal cell carcinoma.",
+    cover: basalCellCarcinoma1,
+    gallery: [
+      { src: basalCellCarcinoma1, alt: "Basal cell carcinoma, before excision" },
+      { src: basalCellCarcinoma2, alt: "Basal cell carcinoma, during excision" },
+      { src: basalCellCarcinoma3, alt: "Basal cell carcinoma, after suturing" },
+    ],
   },
 ];
 

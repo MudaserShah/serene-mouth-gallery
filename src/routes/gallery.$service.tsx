@@ -89,13 +89,12 @@ function ServiceGallery() {
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {service.gallery.map((g, i) => (
               <Reveal key={i} delay={i * 60}>
-                <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-luxe">
+                <div className="group relative w-full overflow-hidden rounded-3xl bg-[color:var(--ink)]/5 shadow-luxe">
                   <img
                     src={g.src}
                     alt={g.alt}
-                    className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                    className="max-h-[70vh] w-full object-contain transition-transform duration-[1200ms] group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ink)]/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
                 </div>
               </Reveal>
             ))}

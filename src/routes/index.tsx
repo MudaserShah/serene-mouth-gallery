@@ -83,7 +83,7 @@ const faqs = [
   },
   {
     q: "How do I book an appointment?",
-    a: "Call or WhatsApp 0330 7644000 / 0301 1610810, or fill out the appointment form on this page.",
+    a: "Call or WhatsApp 0330 7644000, or fill out the appointment form on this page.",
   },
 ];
 
@@ -674,7 +674,7 @@ function Home() {
                       t: "Clinic",
                       v: "Main Shah Wali Road, near Uppal Chowk, over Amin & Sons Book Store, Shah Wali Colony, Wah Cantt, 47010, Pakistan",
                     },
-                    { t: "Phone / WhatsApp", v: "+92 330 7644000  ·  +92 301 1610810" },
+                    { t: "Phone / WhatsApp", v: "+92 330 7644000" },
                     { t: "Email", v: "smustafa455@gmail.com" },
                     { t: "Hours", v: "Mon – Sun · 4:00 PM – 9:00 PM  |  Online 5 AM – 10 PM" },
                   ].map((row) => (
@@ -816,7 +816,6 @@ function Home() {
               </div>
               <ul className="mt-4 space-y-2 text-sm text-primary-foreground/80">
                 <li>+92 330 7644000</li>
-                <li>+92 301 1610810</li>
                 <li>smustafa455@gmail.com</li>
               </ul>
             </div>
