@@ -43,7 +43,6 @@ import clinicOffice1 from "@/assets/gallery/clinic-office-1.jpeg";
 import clinicOffice2 from "@/assets/gallery/clinic-office-2.jpeg";
 import clinicBuildingDay from "@/assets/gallery/clinic-building-day.jpeg";
 import clinicBuildingDusk from "@/assets/gallery/clinic-building-dusk.jpeg";
-import clinicChair from "@/assets/gallery/clinic-chair.png";
 import clinicBanners from "@/assets/gallery/clinic-banners.png";
 
 export type GalleryImage = { src: string; alt: string };
