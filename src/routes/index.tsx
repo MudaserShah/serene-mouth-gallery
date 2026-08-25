@@ -1,11 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Reveal, Counter } from "@/components/motion";
-import logoAsset from "@/assets/logo.png";
-import dentistAsset from "@/assets/dentist-portrait.png";
-import clinicChairAsset from "@/assets/clinic-chair.png";
-import consultationAsset from "@/assets/consultation.png";
-import bannersAsset from "@/assets/clinic-banners.png";
+import logoAsset from "@/assets/gallery/logo.png";
+import dentistAsset from "@/assets/gallery/dentist-portrait.png";
+import clinicChairAsset from "@/assets/gallery/clinic-chair.png";
+import consultationAsset from "@/assets/gallery/clinic-office-1.jpeg";
+import bannersAsset from "@/assets/gallery/clinic-banners.png";
 import { services, clinicGallery } from "@/lib/services-data";
 
 export const Route = createFileRoute("/")({

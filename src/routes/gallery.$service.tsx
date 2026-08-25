@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
-import logoAsset from "@/assets/logo.png";
+import logoAsset from "@/assets/gallery/logo.png";
 import { getServiceBySlug, services } from "@/lib/services-data";
 
 export const Route = createFileRoute("/gallery/$service")({
