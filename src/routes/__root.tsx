@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Premium dental, implant & maxillofacial surgery clinic in Wah Cantt led by FCPS certified Dr. Sayed Mustafa.",
+          "Premium dental, implant & maxillofacial surgery clinic in Wah Cantt led by FCPS qualified Dr. Sayed Mustafa.",
       },
       { name: "author", content: "Center of Dental Implant & Face Surgery" },
       { name: "theme-color", content: "#0f3d3e" },

@@ -10,53 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as GalleryImplantologistRouteImport } from './routes/gallery.implantologist'
-import { Route as GalleryImpactionsRouteImport } from './routes/gallery.impactions'
+import { Route as GalleryServiceRouteImport } from './routes/gallery.$service'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GalleryImplantologistRoute = GalleryImplantologistRouteImport.update({
-  id: '/gallery/implantologist',
-  path: '/gallery/implantologist',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryImpactionsRoute = GalleryImpactionsRouteImport.update({
-  id: '/gallery/impactions',
-  path: '/gallery/impactions',
+const GalleryServiceRoute = GalleryServiceRouteImport.update({
+  id: '/gallery/$service',
+  path: '/gallery/$service',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/gallery/impactions': typeof GalleryImpactionsRoute
-  '/gallery/implantologist': typeof GalleryImplantologistRoute
+  '/gallery/$service': typeof GalleryServiceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/gallery/impactions': typeof GalleryImpactionsRoute
-  '/gallery/implantologist': typeof GalleryImplantologistRoute
+  '/gallery/$service': typeof GalleryServiceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/gallery/impactions': typeof GalleryImpactionsRoute
-  '/gallery/implantologist': typeof GalleryImplantologistRoute
+  '/gallery/$service': typeof GalleryServiceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/gallery/impactions' | '/gallery/implantologist'
+  fullPaths: '/' | '/gallery/$service'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/gallery/impactions' | '/gallery/implantologist'
-  id: '__root__' | '/' | '/gallery/impactions' | '/gallery/implantologist'
+  to: '/' | '/gallery/$service'
+  id: '__root__' | '/' | '/gallery/$service'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  GalleryImpactionsRoute: typeof GalleryImpactionsRoute
-  GalleryImplantologistRoute: typeof GalleryImplantologistRoute
+  GalleryServiceRoute: typeof GalleryServiceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,18 +58,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/gallery/implantologist': {
-      id: '/gallery/implantologist'
-      path: '/gallery/implantologist'
-      fullPath: '/gallery/implantologist'
-      preLoaderRoute: typeof GalleryImplantologistRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery/impactions': {
-      id: '/gallery/impactions'
-      path: '/gallery/impactions'
-      fullPath: '/gallery/impactions'
-      preLoaderRoute: typeof GalleryImpactionsRouteImport
+    '/gallery/$service': {
+      id: '/gallery/$service'
+      path: '/gallery/$service'
+      fullPath: '/gallery/$service'
+      preLoaderRoute: typeof GalleryServiceRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -87,8 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  GalleryImpactionsRoute: GalleryImpactionsRoute,
-  GalleryImplantologistRoute: GalleryImplantologistRoute,
+  GalleryServiceRoute: GalleryServiceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

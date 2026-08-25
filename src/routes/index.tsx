@@ -4,9 +4,9 @@ import { Reveal, Counter } from "@/components/motion";
 import logoAsset from "@/assets/logo.png";
 import dentistAsset from "@/assets/dentist-portrait.png";
 import clinicChairAsset from "@/assets/clinic-chair.png";
-import surgery1 from "@/assets/surgery-1.png";
 import consultationAsset from "@/assets/consultation.png";
 import bannersAsset from "@/assets/clinic-banners.png";
+import { services, clinicGallery } from "@/lib/services-data";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,20 +28,8 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const services = [
-  { t: "Dental Implants", d: "Titanium implant surgery with life-like restorations." },
-  { t: "Orthodontics & Braces", d: "Visible, invisible braces and clear aligners." },
-  { t: "Wisdom Tooth Surgery", d: "Painless impaction removal and extractions." },
-  { t: "Root Canal Treatment", d: "Precision RCT with tooth-coloured fillings." },
-  { t: "Cosmetic Facial Surgery", d: "Facial aesthetics, fillers, and anti-wrinkle." },
-  { t: "Maxillofacial Trauma", d: "Jaw & facial fracture fixation and reconstruction." },
-  { t: "TMJ Surgery", d: "Diagnosis and surgical care for joint disorders." },
-  { t: "Oral Pathology", d: "Cysts, tumors and oral cancer surgeries." },
-  { t: "Teeth Whitening & Scaling", d: "Laser whitening and professional cleaning." },
-];
-
 const whyUs = [
-  { t: "FCPS Certified Surgeon", d: "Dual specialty: implantologist & orthodontist." },
+  { t: "FCPS Qualified Surgeon", d: "Dual specialty: implantologist & orthodontist." },
   { t: "State-of-the-Art Clinic", d: "Modern operatory, sterile theatre, digital imaging." },
   { t: "329+ Five-Star Reviews", d: "4.9 average across Google and Marham." },
   { t: "Painless Procedures", d: "Gentle protocols with post-op follow-ups." },
@@ -50,7 +38,7 @@ const whyUs = [
 const process = [
   { n: "01", t: "Consultation", d: "Comprehensive exam, imaging and honest advice." },
   { n: "02", t: "Personal Plan", d: "Treatment mapped around your goals and budget." },
-  { n: "03", t: "Precision Care", d: "Performed by an FCPS certified surgeon." },
+  { n: "03", t: "Precision Care", d: "Performed by an FCPS qualified surgeon." },
   { n: "04", t: "Aftercare", d: "Post-op check-ins and long-term follow-up." },
 ];
 
@@ -72,21 +60,6 @@ const testimonials = [
     r: "Took my son for a mucocele — the doctor treated him gently and professionally, and even called after surgery to check in. Highly recommended.",
   },
 ];
-
-const galleryCategories = [
-  {
-    title: "Implantologist",
-    desc: "Dental implant cases, consultations and restorative work by a certified implantologist.",
-    cover: consultationAsset,
-    to: "/gallery/implantologist",
-  },
-  {
-    title: "Impactions",
-    desc: "Wisdom tooth impactions and maxillofacial surgical procedures in the operating theatre.",
-    cover: surgery1,
-    to: "/gallery/impactions",
-  },
-] as const;
 
 const faqs = [
   {
@@ -193,7 +166,7 @@ function Home() {
               <Reveal>
                 <span className="inline-flex items-center gap-2 rounded-full glass px-3 py-1.5 text-xs uppercase tracking-[0.25em] text-muted-foreground">
                   <span className="h-1.5 w-1.5 rounded-full bg-[color:var(--gold)]" />
-                  FCPS Certified · Wah Cantt
+                  FCPS Qualified · Wah Cantt
                 </span>
               </Reveal>
               <Reveal delay={80}>
@@ -384,7 +357,7 @@ function Home() {
               </Reveal>
               <Reveal delay={200}>
                 <p className="mt-6 text-lg text-primary-foreground/80 max-w-xl">
-                  An FCPS-certified Oral &amp; Maxillofacial Surgeon with 8 years of specialist
+                  An FCPS-qualified Oral &amp; Maxillofacial Surgeon with 8 years of specialist
                   experience. Trained at Khyber Medical University and the College of Physicians
                   and Surgeons Pakistan. Consultant at Center of Dental Implant &amp; Face Surgery, Wah Cantt.
                 </p>
@@ -433,20 +406,34 @@ function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((s, i) => (
-              <Reveal key={s.t} delay={i * 60}>
-                <div className="group relative h-full overflow-hidden rounded-3xl border border-border bg-card p-7 transition duration-500 hover:-translate-y-1 hover:shadow-luxe">
-                  <div className="absolute inset-x-0 -bottom-32 h-32 bg-[color:var(--gold-soft)] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-70" />
-                  <div className="relative">
-                    <div className="text-display text-5xl text-[color:var(--gold)]/60">
-                      {String(i + 1).padStart(2, "0")}
-                    </div>
-                    <div className="mt-6 h-px w-10 bg-foreground/30 transition-all duration-500 group-hover:w-24 group-hover:bg-[color:var(--gold)]" />
-                    <h3 className="mt-5 text-display text-2xl">{s.t}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
+              <Reveal key={s.slug} delay={i * 60}>
+                <Link
+                  to="/gallery/$service"
+                  params={{ service: s.slug }}
+                  className="group block relative h-full overflow-hidden rounded-3xl shadow-luxe transition duration-500 hover:-translate-y-1"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={s.cover}
+                      alt={s.title}
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ink)]/85 via-[color:var(--ink)]/10 to-transparent" />
                   </div>
-                </div>
+                  <div className="absolute inset-x-0 bottom-0 p-6 text-primary-foreground">
+                    <div className="h-px w-10 bg-[color:var(--gold)] transition-all duration-500 group-hover:w-16" />
+                    <h3 className="mt-3 text-display text-xl md:text-2xl">{s.title}</h3>
+                    <p className="mt-1.5 text-xs text-primary-foreground/80 line-clamp-2">{s.desc}</p>
+                    <span className="mt-3 inline-flex items-center gap-2 text-xs text-[color:var(--gold-soft)]">
+                      View gallery
+                      <span className="grid h-5 w-5 place-items-center rounded-full bg-[color:var(--gold)] text-[color:var(--ink)] transition-transform group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </span>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
@@ -467,35 +454,25 @@ function Home() {
                 Clinic &amp; surgery moments.
               </h2>
             </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-5 text-muted-foreground">
+                A look inside the clinic — for photos of a specific procedure, open that
+                service above.
+              </p>
+            </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
-            {galleryCategories.map((c, i) => (
-              <Reveal key={c.title} delay={i * 120}>
-                <Link
-                  to={c.to}
-                  className="group block relative h-full overflow-hidden rounded-3xl shadow-luxe transition duration-500 hover:-translate-y-1"
-                >
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img
-                      src={c.cover}
-                      alt={c.title}
-                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ink)]/85 via-[color:var(--ink)]/20 to-transparent" />
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 p-7 text-primary-foreground">
-                    <div className="h-px w-10 bg-[color:var(--gold)] transition-all duration-500 group-hover:w-24" />
-                    <h3 className="mt-4 text-display text-3xl md:text-4xl">{c.title}</h3>
-                    <p className="mt-2 text-sm text-primary-foreground/80 max-w-md">{c.desc}</p>
-                    <span className="mt-4 inline-flex items-center gap-2 text-sm text-[color:var(--gold-soft)]">
-                      View gallery
-                      <span className="grid h-7 w-7 place-items-center rounded-full bg-[color:var(--gold)] text-[color:var(--ink)] transition-transform group-hover:translate-x-0.5">
-                        →
-                      </span>
-                    </span>
-                  </div>
-                </Link>
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {clinicGallery.map((g, i) => (
+              <Reveal key={i} delay={i * 60}>
+                <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-luxe">
+                  <img
+                    src={g.src}
+                    alt={g.alt}
+                    className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[color:var(--ink)]/70 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                </div>
               </Reveal>
             ))}
           </div>

@@ -1,35 +1,43 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { Reveal } from "@/components/motion";
 import logoAsset from "@/assets/logo.png";
-import consultationAsset from "@/assets/consultation.png";
-import dentistAsset from "@/assets/dentist-portrait.png";
-import clinicChairAsset from "@/assets/clinic-chair.png";
-import bannersAsset from "@/assets/clinic-banners.png";
+import { getServiceBySlug, services } from "@/lib/services-data";
 
-export const Route = createFileRoute("/gallery/implantologist")({
-  head: () => ({
+export const Route = createFileRoute("/gallery/$service")({
+  loader: ({ params }) => {
+    const service = getServiceBySlug(params.service);
+    if (!service) throw notFound();
+    return service;
+  },
+  head: ({ loaderData }) => ({
     meta: [
-      { title: "Implantologist Gallery — Center of Dental Implant & Face Surgery" },
+      {
+        title: loaderData
+          ? `${loaderData.title} Gallery — Center of Dental Implant & Face Surgery`
+          : "Gallery — Center of Dental Implant & Face Surgery",
+      },
       {
         name: "description",
-        content:
-          "Dental implant cases, consultations and restorative dentistry by Dr. Sayed Mustafa, certified implantologist in Wah Cantt.",
+        content: loaderData?.desc ?? "Dental, jaw & face treatment gallery.",
       },
     ],
   }),
-  component: ImplantologistGallery,
+  component: ServiceGallery,
+  notFoundComponent: () => (
+    <div className="min-h-screen grid place-items-center text-center px-4">
+      <div>
+        <h1 className="text-display text-3xl">Service not found</h1>
+        <Link to="/" className="mt-4 inline-block text-sm underline">
+          Back to home
+        </Link>
+      </div>
+    </div>
+  ),
 });
 
-// NOTE: Client naye images dega — unko src/assets mein daal kar yahan is array
-// mein import karke add karna hai (src + alt), grid mein khud show ho jayengi.
-const images = [
-  { src: consultationAsset, alt: "Implant consultation with patient" },
-  { src: dentistAsset, alt: "Dr. Sayed Mustafa — certified implantologist" },
-  { src: clinicChairAsset, alt: "Modern implant operatory" },
-  { src: bannersAsset, alt: "Clinic entrance — implant & face surgery center" },
-];
+function ServiceGallery() {
+  const service = Route.useLoaderData();
 
-function ImplantologistGallery() {
   return (
     <div className="min-h-screen bg-[color:var(--cream)] text-foreground">
       {/* HEADER */}
@@ -47,12 +55,13 @@ function ImplantologistGallery() {
             </Link>
             <Link
               to="/"
+              hash="services"
               className="group inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm text-primary-foreground shrink-0"
             >
               <span className="grid h-6 w-6 place-items-center rounded-full bg-[color:var(--gold)] text-[color:var(--ink)] transition-transform group-hover:-translate-x-0.5">
                 ←
               </span>
-              Back to home
+              Back to services
             </Link>
           </div>
         </div>
@@ -64,24 +73,21 @@ function ImplantologistGallery() {
           <div className="text-center max-w-2xl mx-auto">
             <Reveal>
               <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
-                Gallery
+                Service Gallery
               </span>
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-3 text-display text-4xl md:text-5xl lg:text-6xl">
-                <span className="italic gold-text">Implantologist</span>
+                <span className="italic gold-text">{service.title}</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
-              <p className="mt-5 text-lg text-muted-foreground">
-                Dental implant cases, consultations and restorative work — precision implantology
-                by an FCPS certified surgeon.
-              </p>
+              <p className="mt-5 text-lg text-muted-foreground">{service.desc}</p>
             </Reveal>
           </div>
 
           <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {images.map((g, i) => (
+            {service.gallery.map((g, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div className="group relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-luxe">
                   <img
@@ -93,6 +99,27 @@ function ImplantologistGallery() {
                 </div>
               </Reveal>
             ))}
+          </div>
+
+          {/* Other services */}
+          <div className="mt-20 border-t border-border pt-10">
+            <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground text-center">
+              Other services
+            </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              {services
+                .filter((s) => s.slug !== service.slug)
+                .map((s) => (
+                  <Link
+                    key={s.slug}
+                    to="/gallery/$service"
+                    params={{ service: s.slug }}
+                    className="rounded-full border border-border px-4 py-2 text-sm hover:bg-[color:var(--gold-soft)] transition"
+                  >
+                    {s.title}
+                  </Link>
+                ))}
+            </div>
           </div>
         </div>
       </main>
