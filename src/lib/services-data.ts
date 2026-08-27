@@ -23,8 +23,8 @@ import dentalImplant5 from "@/assets/services/dental-implant-5.jpeg";
 import faceInfectionMain from "@/assets/services/face-infection-main.jpeg";
 import faceInfection1 from "@/assets/services/face-infection-1.jpeg";
 
-// NOTE: Client ne veneers case photos hata dene ko kaha — veneersMain/1/2
-// files still exist in src/assets/services agar dobara chahiye ho.
+// New veneers case photo (client provided).
+import veneers1 from "@/assets/services/veneers-1.jpeg";
 
 import rootCanalMain from "@/assets/services/root-canal-main.jpeg";
 import rootCanal1 from "@/assets/services/root-canal-1.jpeg";
@@ -35,10 +35,8 @@ import softTissueRepairMain from "@/assets/services/soft-tissue-repair-main.jpeg
 import basalCellCarcinoma1 from "@/assets/services/basal-cell-carcinoma-1.jpeg";
 import basalCellCarcinoma2 from "@/assets/services/basal-cell-carcinoma-2.jpeg";
 import basalCellCarcinoma3 from "@/assets/services/basal-cell-carcinoma-3.jpeg";
-// NOTE: "Scaling and Polishing" ke liye client ne abhi tak apni koi photo
-// nahi bheji — temporarily flyer wala teeth-cleaning icon laga diya hai.
-// Jab client apna case photo de, isko replace kar dena (cover + gallery).
-import scalingPolishingPlaceholder from "@/assets/services/scaling-polishing-placeholder.png";
+import scalingPolishing1 from "@/assets/services/scaling-polishing-1.jpeg";
+import scalingPolishing2 from "@/assets/services/scaling-polishing-2.jpeg";
 
 import gumsDisease1 from "@/assets/services/gums-disease-1.jpeg";
 import gumsDisease2 from "@/assets/services/gums-disease-2.jpeg";
@@ -173,11 +171,8 @@ export const services: ServiceItem[] = [
     slug: "veneers",
     title: "Veneers",
     desc: "Custom veneers for a flawless, natural-looking smile.",
-    // NOTE: Client ne pichli case photos hata deni ki request ki hai.
-    // Jab tak nayi photo na mile, flyer wala generic placeholder use ho
-    // raha hai — replace kar dena jab client apni veneers case photo de.
-    cover: scalingPolishingPlaceholder,
-    gallery: [{ src: scalingPolishingPlaceholder, alt: "Veneers" }],
+    cover: veneers1,
+    gallery: [{ src: veneers1, alt: "Veneers case photo" }],
   },
   {
     slug: "laser-teeth-whitening",
@@ -209,8 +204,11 @@ export const services: ServiceItem[] = [
     slug: "scaling-polishing",
     title: "Scaling and Polishing",
     desc: "Professional cleaning to remove plaque and tartar buildup.",
-    cover: scalingPolishingPlaceholder,
-    gallery: [{ src: scalingPolishingPlaceholder, alt: "Scaling and polishing" }],
+    cover: scalingPolishing1,
+    gallery: [
+      { src: scalingPolishing1, alt: "Scaling and polishing, before and after close-up" },
+      { src: scalingPolishing2, alt: "Scaling and polishing, before and after" },
+    ],
   },
   {
     slug: "basal-cell-carcinoma",
