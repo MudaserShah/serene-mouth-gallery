@@ -170,17 +170,18 @@ function Home() {
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="mt-6 text-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-[88px]">
-                  Precision dentistry,
-                  <br />
-                  <span className="italic gold-text">crafted around you.</span>
+                  Center of Dental Implant
                 </h1>
               </Reveal>
               <Reveal delay={160}>
-                <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-                  Center of Dental Implant &amp; Face Surgery — led by
-                  <span className="text-foreground"> Dr. Sayed Mustafa</span>, FCPS Oral &amp;
-                  Maxillofacial Surgeon. Implants, orthodontics, and cosmetic facial surgery
-                  delivered with quiet luxury.
+                <h2 className="mt-6 text-display text-2xl font-bold text-foreground sm:text-3xl">
+                  Dr. Sayed Mustafa
+                </h2>
+                <p className="mt-3 max-w-xl text-lg text-muted-foreground">
+                  An FCPS-qualified Oral &amp; Maxillofacial Surgeon with 8 years of specialist
+                  experience. Trained at Khyber Medical University and the College of Physicians
+                  and Surgeons Pakistan. Consultant at Center of Dental Implant &amp; Face
+                  Surgery, Wah Cantt.
                 </p>
               </Reveal>
               <Reveal delay={240}>

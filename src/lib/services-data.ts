@@ -23,21 +23,22 @@ import dentalImplant5 from "@/assets/services/dental-implant-5.jpeg";
 import faceInfectionMain from "@/assets/services/face-infection-main.jpeg";
 import faceInfection1 from "@/assets/services/face-infection-1.jpeg";
 
-import veneersMain from "@/assets/services/veneers-main.jpeg";
-import veneers1 from "@/assets/services/veneers-1.jpeg";
-import veneers2 from "@/assets/services/veneers-2.jpeg";
+// NOTE: Client ne veneers case photos hata dene ko kaha — veneersMain/1/2
+// files still exist in src/assets/services agar dobara chahiye ho.
 
 import rootCanalMain from "@/assets/services/root-canal-main.jpeg";
 import rootCanal1 from "@/assets/services/root-canal-1.jpeg";
 import rootCanal3 from "@/assets/services/root-canal-3.jpeg";
-import rootCanalIllustration from "@/assets/services/root-canal-illustration.jpeg";
+import rootCanalDiagram from "@/assets/services/root-canal-diagram.jpeg";
 
-import softTissueRepair1 from "@/assets/services/soft-tissue-repair-1.jpeg";
-import scalingPolishing1 from "@/assets/services/scaling-polishing-1.jpeg";
-import scalingPolishing2 from "@/assets/services/scaling-polishing-2.jpeg";
+import softTissueRepairMain from "@/assets/services/soft-tissue-repair-main.jpeg";
 import basalCellCarcinoma1 from "@/assets/services/basal-cell-carcinoma-1.jpeg";
 import basalCellCarcinoma2 from "@/assets/services/basal-cell-carcinoma-2.jpeg";
 import basalCellCarcinoma3 from "@/assets/services/basal-cell-carcinoma-3.jpeg";
+// NOTE: "Scaling and Polishing" ke liye client ne abhi tak apni koi photo
+// nahi bheji — temporarily flyer wala teeth-cleaning icon laga diya hai.
+// Jab client apna case photo de, isko replace kar dena (cover + gallery).
+import scalingPolishingPlaceholder from "@/assets/services/scaling-polishing-placeholder.png";
 
 import gumsDisease1 from "@/assets/services/gums-disease-1.jpeg";
 import gumsDisease2 from "@/assets/services/gums-disease-2.jpeg";
@@ -49,9 +50,7 @@ import jawFaceFracture1 from "@/assets/services/jaw-face-fracture-1.jpeg";
 
 // Real clinic photos for the homepage "Clinic Gallery" section.
 import clinicStorageTv from "@/assets/gallery/clinic-storage-tv.jpeg";
-import clinicTreatmentRoom1 from "@/assets/gallery/clinic-treatment-room-1.jpeg";
 import clinicTreatmentRoom2 from "@/assets/gallery/clinic-treatment-room-2.jpeg";
-import clinicSignboard from "@/assets/gallery/clinic-signboard.jpeg";
 import clinicOffice1 from "@/assets/gallery/clinic-office-1.jpeg";
 import clinicOffice2 from "@/assets/gallery/clinic-office-2.jpeg";
 import clinicBuildingDay from "@/assets/gallery/clinic-building-day.jpeg";
@@ -174,12 +173,11 @@ export const services: ServiceItem[] = [
     slug: "veneers",
     title: "Veneers",
     desc: "Custom veneers for a flawless, natural-looking smile.",
-    cover: veneersMain,
-    gallery: [
-      { src: veneersMain, alt: "Veneers procedure" },
-      { src: veneers1, alt: "Veneers procedure, curing light" },
-      { src: veneers2, alt: "Veneers, before and after" },
-    ],
+    // NOTE: Client ne pichli case photos hata deni ki request ki hai.
+    // Jab tak nayi photo na mile, flyer wala generic placeholder use ho
+    // raha hai — replace kar dena jab client apni veneers case photo de.
+    cover: scalingPolishingPlaceholder,
+    gallery: [{ src: scalingPolishingPlaceholder, alt: "Veneers" }],
   },
   {
     slug: "laser-teeth-whitening",
@@ -192,12 +190,37 @@ export const services: ServiceItem[] = [
     slug: "root-canal-treatment",
     title: "Root Canal Treatment",
     desc: "Precision RCT with tooth-coloured fillings.",
-    cover: rootCanalIllustration,
+    cover: rootCanalDiagram,
     gallery: [
-      { src: rootCanalIllustration, alt: "Root canal treatment illustration" },
+      { src: rootCanalDiagram, alt: "Root canal treatment illustration" },
       { src: rootCanalMain, alt: "Root canal treatment X-ray" },
       { src: rootCanal1, alt: "Root canal treatment X-ray, close view" },
       { src: rootCanal3, alt: "Root canal treatment X-ray, close view" },
+    ],
+  },
+  {
+    slug: "soft-tissue-repair",
+    title: "Soft Tissue Repair",
+    desc: "Surgical repair of facial and oral soft tissue injuries.",
+    cover: softTissueRepairMain,
+    gallery: [{ src: softTissueRepairMain, alt: "Soft tissue repair — surgery and healing" }],
+  },
+  {
+    slug: "scaling-polishing",
+    title: "Scaling and Polishing",
+    desc: "Professional cleaning to remove plaque and tartar buildup.",
+    cover: scalingPolishingPlaceholder,
+    gallery: [{ src: scalingPolishingPlaceholder, alt: "Scaling and polishing" }],
+  },
+  {
+    slug: "basal-cell-carcinoma",
+    title: "Basal Cell Carcinoma",
+    desc: "Diagnosis and surgical removal of facial skin lesions.",
+    cover: basalCellCarcinoma1,
+    gallery: [
+      { src: basalCellCarcinoma1, alt: "Basal cell carcinoma, pre-operative marking" },
+      { src: basalCellCarcinoma2, alt: "Basal cell carcinoma, surgical excision" },
+      { src: basalCellCarcinoma3, alt: "Basal cell carcinoma, sutured closure" },
     ],
   },
   {
@@ -214,34 +237,6 @@ export const services: ServiceItem[] = [
     cover: crownBridge,
     gallery: [{ src: crownBridge, alt: "Crown & bridge" }],
   },
-  {
-    slug: "soft-tissue-repair",
-    title: "Soft Tissue Repair",
-    desc: "Surgical repair and reconstruction of oral & facial soft tissue.",
-    cover: softTissueRepair1,
-    gallery: [{ src: softTissueRepair1, alt: "Soft tissue repair, surgery and healing stages" }],
-  },
-  {
-    slug: "scaling-and-polishing",
-    title: "Scaling and Polishing",
-    desc: "Professional cleaning to remove plaque, tartar & stains.",
-    cover: scalingPolishing1,
-    gallery: [
-      { src: scalingPolishing1, alt: "Scaling and polishing, before and after" },
-      { src: scalingPolishing2, alt: "Scaling and polishing, before and after close view" },
-    ],
-  },
-  {
-    slug: "basal-cell-carcinoma",
-    title: "Basal Cell Carcinoma",
-    desc: "Diagnosis and surgical excision of facial basal cell carcinoma.",
-    cover: basalCellCarcinoma1,
-    gallery: [
-      { src: basalCellCarcinoma1, alt: "Basal cell carcinoma, before excision" },
-      { src: basalCellCarcinoma2, alt: "Basal cell carcinoma, during excision" },
-      { src: basalCellCarcinoma3, alt: "Basal cell carcinoma, after suturing" },
-    ],
-  },
 ];
 
 export function getServiceBySlug(slug: string) {
@@ -252,8 +247,6 @@ export function getServiceBySlug(slug: string) {
 // photos here (add the file to src/assets/gallery and push it into this
 // array).
 export const clinicGallery: GalleryImage[] = [
-  { src: clinicSignboard, alt: "Clinic signboard — Center of Dental Implant & Face Surgery" },
-  { src: clinicTreatmentRoom1, alt: "Dental treatment room" },
   { src: clinicTreatmentRoom2, alt: "Dental treatment room, second view" },
   { src: clinicStorageTv, alt: "Clinic waiting area & storage" },
   { src: clinicOffice1, alt: "Doctor's office" },
