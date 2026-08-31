@@ -170,7 +170,7 @@ function Home() {
               </Reveal>
               <Reveal delay={80}>
                 <h1 className="mt-6 text-display text-5xl leading-[0.95] sm:text-6xl md:text-7xl lg:text-[88px]">
-                  Center of Dental Implant
+                  Center of Dental Implant &amp; Face Surgery
                 </h1>
               </Reveal>
               <Reveal delay={160}>
