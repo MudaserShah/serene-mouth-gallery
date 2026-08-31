@@ -246,7 +246,7 @@ function Home() {
                   <div className="flex items-center gap-2">
                     <span className="text-[color:var(--gold)]">★★★★★</span>
                   </div>
-                  <div className="text-xs text-muted-foreground mt-0.5">329 reviews</div>
+                  <div className="text-xs text-muted-foreground mt-0.5">329+ reviews</div>
                 </div>
                 <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 glass-dark text-primary-foreground rounded-full px-5 py-2.5 text-sm shadow-luxe whitespace-nowrap">
                   Dr. Sayed Mustafa · BDS, FCPS
