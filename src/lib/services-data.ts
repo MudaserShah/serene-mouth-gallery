@@ -1,7 +1,10 @@
 // Service cover images — cropped from the client's "OUR SERVICES" flyer.
 // Client will send proper individual photos per service later; when that
 // happens, just swap the relevant `cover` (and add to `gallery`) below.
-import wisdomToothSurgery from "@/assets/services/wisdom-tooth-surgery.png";
+import wisdomToothXray1 from "@/assets/services/wisdom-tooth-surgery-xray-1.jpeg";
+import wisdomToothXray2 from "@/assets/services/wisdom-tooth-surgery-xray-2.jpeg";
+import wisdomToothXray3 from "@/assets/services/wisdom-tooth-surgery-xray-3.jpeg";
+import wisdomToothXray4 from "@/assets/services/wisdom-tooth-surgery-xray-4.jpeg";
 import jawCystsTumors from "@/assets/services/jaw-cysts-tumors.png";
 import correctivesJawSurgery from "@/assets/services/correctives-jaw-surgery.png";
 import viralBacterialFacialInfection from "@/assets/services/viral-bacterial-facial-infection.png";
@@ -93,9 +96,12 @@ export const services: ServiceItem[] = [
     slug: "wisdom-tooth-surgery",
     title: "Wisdom Tooth Surgery",
     desc: "Painless impaction removal and extractions.",
-    cover: wisdomToothSurgery,
+    cover: wisdomToothXray1,
     gallery: [
-      { src: wisdomToothSurgery, alt: "Wisdom tooth surgery" },
+      { src: wisdomToothXray1, alt: "Impacted wisdom tooth X-ray, close view" },
+      { src: wisdomToothXray2, alt: "Impacted wisdom tooth X-ray, measured view" },
+      { src: wisdomToothXray3, alt: "Wisdom tooth surgery, full arch X-ray" },
+      { src: wisdomToothXray4, alt: "Wisdom tooth surgery, panoramic X-ray" },
     ],
   },
   {
