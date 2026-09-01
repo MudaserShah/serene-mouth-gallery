@@ -54,7 +54,6 @@ import clinicStorageTv from "@/assets/gallery/clinic-storage-tv.jpeg";
 import clinicTreatmentRoom1 from "@/assets/gallery/clinic-treatment-room-1.jpeg";
 import clinicTreatmentRoom2 from "@/assets/gallery/clinic-treatment-room-2.jpeg";
 import clinicOffice1 from "@/assets/gallery/clinic-office-1.jpeg";
-import clinicOffice2 from "@/assets/gallery/clinic-office-2.jpeg";
 import clinicSignboard from "@/assets/gallery/clinic-signboard.jpeg";
 import clinicBuildingDay from "@/assets/gallery/clinic-building-day.jpeg";
 import clinicBuildingDusk from "@/assets/gallery/clinic-building-dusk.jpeg";
@@ -256,7 +255,6 @@ export const clinicGallery: GalleryImage[] = [
   { src: clinicTreatmentRoom1, alt: "Dental treatment room" },
   { src: clinicStorageTv, alt: "Clinic waiting area & storage" },
   { src: clinicOffice1, alt: "Doctor's office" },
-  { src: clinicOffice2, alt: "Doctor's office, second view" },
   { src: clinicTreatmentRoom2, alt: "Dental treatment room, second view" },
   { src: clinicSignboard, alt: "Clinic signboard" },
   { src: clinicBuildingDay, alt: "Clinic building — day view" },
